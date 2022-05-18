@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Orders</title>
+    <style>
+        table, th, td {
+            margin-left: 100px;
+            margin-top: 50px;
+          border:1px solid red;
+        }
+        </style>
+</head>
+<body>
+    <h1>Recieved Orders</h1>
+    <table style="width: 80%;">
+        <tr>
+            <th>UserName</th> 
+            <th>Phone Number</th>
+            <th>Order Item</th>
+            <th>Additional Items</th> 
+            <th>Order Dakkkkkkkkhhhhhhhhkte</th> 
+            <th>Address</th>
+            <th>Message</th>
+        </tr>   
+        <% for (let orderrec of orders) {%>
+            <tr>
+                <td style="text-align: center;"><%= orderrec.name %> </td>
+                <td style="text-align: center;"><%= orderrec.number %> </td>
+                <td style="text-align: center;"><%= orderrec.order %> </td>
+                <td style="text-align: center;"><%= orderrec.additional %> </td>
+                <td style="text-align: center;"><%= orderrec.orderdate %> </td>
+                <td style="text-align: center;"><%= orderrec.address %> </td>
+                <td style="text-align: center;"><%= orderrec.message%> </td>
+            </tr>
+            <% } %>  
+        </table>
+        <form action="/makecsv" method="get"><button type="submit">Create CSV File of Orders</button></form>
+</body>
+</html>
